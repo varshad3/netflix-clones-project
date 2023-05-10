@@ -1,0 +1,26 @@
+.parent_row{
+   margin-left: 10px;
+}
+
+.movies_row{
+    display: flex;
+    overflow-x: scroll;
+    margin: 10px;
+}
+
+.movie{
+    width: 100%;
+    object-fit: contain;
+    max-height: 200px;
+    margin-right: 10px;
+    transition: transform ease-in-out 450ms;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.movie:hover{
+    transform: scale(1.05);
+
+}

@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import instance from '../instanceConfig'
+import './Row.css'
 
-function Row() {
+function Row({title,fetchUrl}) {
+    const base_url = "https://image.tmdb.org/t/p/original/";
+    const [movies,setMovies]=useState([])
+    const fetchData = async()=>{
+        const response = await instance.get(fetchUrl)
+        const {results} = response.data
+        setMovies(results)
+    }
+
+    useEffect(()=>{
+        fetchData()
+    },[])
   return (
-    <div>Row</div>
+    <div className='parent_row'>
+        <h2>{title}</h2>
+        <div className="movies_row">
+            {
+                movies.map((movie)=>(
+                    <img className='movie' src={`${base_url}/${movie.backdrop_path}`} alt="movie image" />
+                ))
+            }
+        </div>
+    </div>
   )
 }
 

@@ -1,12 +1,21 @@
 import './App.css';
+import Banner from './components/Banner';
 import Row from './components/Row';
 import requests from './request';
 
 function App() {
   return (
-    <div className="App">
-      <h3>Netflix</h3>
+    <div>
+      <Banner/>
       <Row  title={'Netflix Originals'} fetchUrl={requests.fetchNetflixOriginals} />
+      <Row  title={'Trending Movies'} fetchUrl={requests.fetchTrending} />
+      <Row  title={'Comedy Movies'} fetchUrl={requests.fetchComedyMovies} />
+      <Row  title={'Action Movies'} fetchUrl={requests.fetchActionMovies} />
+      <Row  title={'Romance Movies'} fetchUrl={requests.fetchRomanceMovies} />
+      <Row  title={'Documentaries'} fetchUrl={requests.fetchDocumentaries} />
+      <Row  title={'TopRated Movies'} fetchUrl={requests.fetchTopRated} />
+      <Row  title={'Horror Movies'} fetchUrl={requests.fetchHorrorMovies} />
+
     </div>
   );
 }
