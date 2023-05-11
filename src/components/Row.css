@@ -24,3 +24,7 @@
     transform: scale(1.05);
 
 }
+
+.poster{
+    max-height: 250px;
+}
